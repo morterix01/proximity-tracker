@@ -13,16 +13,3 @@ workflows:
     artifacts:
       - build/app/outputs/**/*.apk
 
-  alert-android:
-    name: Proximity Alert (Android)
-    max_build_duration: 60
-    environment:
-      flutter: stable
-    working_directory: proximity_ios
-    scripts:
-      - name: Get Alert dependencies
-        script: flutter pub get
-      - name: Build Alert APK
-        script: flutter build apk --release
-    artifacts:
-      - build/app/outputs/**/*.apk
