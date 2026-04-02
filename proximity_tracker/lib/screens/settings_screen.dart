@@ -19,6 +19,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
     super.initState();
     _nameController.text = _storage.trackerName;
     _topicController.text = _storage.ntfyTopic;
+
+    _nameController.addListener(() {
+      _storage.setTrackerName(_nameController.text.trim());
+    });
+    _topicController.addListener(() {
+      _storage.setNtfyTopic(_topicController.text.trim());
+    });
   }
 
   @override
@@ -29,8 +36,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
   }
 
   Future<void> _saveSettings() async {
-    await _storage.setTrackerName(_nameController.text);
-    await _storage.setNtfyTopic(_topicController.text);
+    await _storage.setTrackerName(_nameController.text.trim());
+    await _storage.setNtfyTopic(_topicController.text.trim());
     if (!mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('Impostazioni salvate.')),
