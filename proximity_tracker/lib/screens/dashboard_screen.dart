@@ -63,7 +63,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               width: 300,
               height: 300,
               decoration: BoxDecoration(
-                color: const Color(0xFF00F2FF).withOpacity(0.15),
+                color: const Color(0xFF00F2FF).withValues(alpha: 0.15),
                 shape: BoxShape.circle,
               ),
             ),
@@ -75,7 +75,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               width: 250,
               height: 250,
               decoration: BoxDecoration(
-                color: const Color(0xFFFF4D4D).withOpacity(0.1),
+                color: const Color(0xFFFF4D4D).withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
             ),
@@ -150,7 +150,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(18),
                       border: Border.all(color: Colors.white24, width: 1.5),
-                      color: Colors.white.withOpacity(0.03),
+                      color: Colors.white.withValues(alpha: 0.03),
                     ),
                     child: TextButton.icon(
                       onPressed: () {
