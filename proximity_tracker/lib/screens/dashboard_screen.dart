@@ -5,6 +5,7 @@ import '../services/storage_service.dart';
 import '../widgets/glass_card.dart';
 import '../widgets/neon_button.dart';
 import 'settings_screen.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -40,6 +41,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
         );
         return;
       }
+
+      await [
+        Permission.location,
+        Permission.locationAlways,
+        Permission.notification,
+        Permission.ignoreBatteryOptimizations,
+      ].request();
 
       await _storage.setTracking(true);
       service.startService();

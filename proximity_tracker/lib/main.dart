@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'screens/dashboard_screen.dart';
 import 'services/location_service.dart';
 import 'services/storage_service.dart';
@@ -11,19 +10,11 @@ void main() async {
   await storage.init();
 
   await AppLocationService.initializeService();
-  await _requestPermissions();
 
   runApp(const ProximityTrackerApp());
 }
 
-Future<void> _requestPermissions() async {
-  await [
-    Permission.location,
-    Permission.locationAlways,
-    Permission.notification,
-    Permission.ignoreBatteryOptimizations,
-  ].request();
-}
+
 
 class ProximityTrackerApp extends StatelessWidget {
   const ProximityTrackerApp({super.key});

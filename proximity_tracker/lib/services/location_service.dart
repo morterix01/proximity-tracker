@@ -57,7 +57,7 @@ class AppLocationService {
     await service.configure(
       androidConfiguration: AndroidConfiguration(
         onStart: onStart,
-        autoStart: true,
+        autoStart: false,
         isForegroundMode: true,
         notificationChannelId: 'proximity_tracker_channel',
         initialNotificationTitle: 'Proximity Tracker',
@@ -65,7 +65,7 @@ class AppLocationService {
         foregroundServiceNotificationId: 888,
       ),
       iosConfiguration: IosConfiguration(
-        autoStart: true,
+        autoStart: false,
         onForeground: onStart,
         onBackground: onIosBackground,
       ),
