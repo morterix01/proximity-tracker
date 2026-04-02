@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 
 class GlassCard extends StatelessWidget {
   final Widget child;
-  final double width;
-  final double height;
+  final double? width;
+  final double? height;
   final EdgeInsetsGeometry padding;
 
   const GlassCard({
     super.key,
     required this.child,
-    this.width = double.infinity,
-    this.height = double.infinity,
+    this.width,
+    this.height,
     this.padding = const EdgeInsets.all(20),
   });
 
