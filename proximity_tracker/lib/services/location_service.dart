@@ -12,6 +12,7 @@ void onStart(ServiceInstance service) async {
   await storage.init();
 
   Timer.periodic(const Duration(seconds: 15), (timer) async {
+    await storage.reload();
     if (!storage.isTracking) return;
 
     final topic = storage.ntfyTopic;
@@ -56,7 +57,7 @@ class AppLocationService {
     await service.configure(
       androidConfiguration: AndroidConfiguration(
         onStart: onStart,
-        autoStart: false,
+        autoStart: true,
         isForegroundMode: true,
         notificationChannelId: 'proximity_tracker_channel',
         initialNotificationTitle: 'Proximity Tracker',
@@ -64,7 +65,7 @@ class AppLocationService {
         foregroundServiceNotificationId: 888,
       ),
       iosConfiguration: IosConfiguration(
-        autoStart: false,
+        autoStart: true,
         onForeground: onStart,
         onBackground: onIosBackground,
       ),

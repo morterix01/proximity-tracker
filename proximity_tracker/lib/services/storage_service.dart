@@ -11,6 +11,10 @@ class StorageService {
     _prefs = await SharedPreferences.getInstance();
   }
 
+  Future<void> reload() async {
+    await _prefs.reload();
+  }
+
   String get trackerName => _prefs.getString('trackerName') ?? 'Unknown Person';
   Future<void> setTrackerName(String name) async {
     await _prefs.setString('trackerName', name);

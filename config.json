@@ -1,0 +1,14 @@
+{
+    "google_email": "luis2009452828@gmail.com",
+    "ntfy_topic": "allarme-labs",
+    "sound_file": "Star Labs alarm.mp3",
+    "check_interval_s": 10,
+    "locations": [
+        {
+            "name": "Casa",
+            "lat": 45.25263,
+            "lon": 9.375316,
+            "radius_m": 100
+        }
+    ]
+}

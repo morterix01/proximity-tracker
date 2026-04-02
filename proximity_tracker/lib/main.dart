@@ -21,6 +21,7 @@ Future<void> _requestPermissions() async {
     Permission.location,
     Permission.locationAlways,
     Permission.notification,
+    Permission.ignoreBatteryOptimizations,
   ].request();
 }
 

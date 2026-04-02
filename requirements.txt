@@ -1,0 +1,4 @@
+locationsharinglib
+playwright
+requests
+pygame
